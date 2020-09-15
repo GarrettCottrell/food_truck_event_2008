@@ -1,0 +1,31 @@
+class FoodTruck
+  attr_reader :name, :inventory
+  def initialize(name)
+    @name  = name
+    @inventory = {}
+  end
+
+  def check_stock(item)
+    if !@inventory[item]
+      return 0
+    elsif inventory[item]
+      return @inventory[item]
+  end
+end
+
+  def stock(item, amount)
+    if @inventory[item]
+    @inventory[item] += amount
+  else !@inventory[item]
+    @inventory[item] = amount
+    end
+  end
+
+  def potential_revenue
+    total_price = 0
+    @inventory.each do |key, value|
+      total_price += (key.price * value)
+      end
+      total_price
+    end
+  end
